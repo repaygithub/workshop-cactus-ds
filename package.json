@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+    "start": "repay-scripts dev src/index.jsx -p 9222",
+    "build": "repay-scripts build src/index.jsx"
+  },
   "dependencies": {
     "@reach/router": "^1.2.1",
     "@repay/cactus-icons": "^0.6.1",
@@ -14,6 +18,7 @@
   },
   "devDependencies": {
     "@repay/scripts": "^0.3.1",
+    "prettier": "^1.18.2",
     "prop-types": "^15.7.2"
   }
 }

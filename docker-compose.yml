@@ -1,0 +1,9 @@
+version: '3'
+services:
+  web:
+    build: .
+    volumes:
+      - './src:/app/src'
+    ports:
+      - '9222:9222'
+      - '9229:9229'
