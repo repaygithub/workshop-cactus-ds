@@ -11,7 +11,13 @@ Steps to follow before the workshop starts.
 
 2. navigate into the directory
 
-3. TODO download docker image
+3. Build the docker image with `docker-compose build`
+
+4. Run the web app `docker-compose up web` and open a browser to [https://localhost:9222](https://localhost:9222)
+
+5. Accept the self-signed certificate and you should see "Hello World" printed.
+
+6. See [Snapshot 1](./docs/snapshot-1.md) for the next steps.
 
 ## DIY Setup
 
