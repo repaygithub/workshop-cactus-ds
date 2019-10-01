@@ -5,7 +5,8 @@
   "license": "MIT",
   "scripts": {
     "start": "repay-scripts dev src/index.jsx -p 9222",
-    "build": "repay-scripts build src/index.jsx"
+    "build": "repay-scripts build src/index.jsx",
+    "fmt": "prettier --write ./**/*.*"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
