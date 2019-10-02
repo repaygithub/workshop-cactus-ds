@@ -1,6 +1,6 @@
 import React from 'react'
 import cactus from '../assets/cactus-with-fill.svg'
-import { Box, Flex } from '@repay/cactus-web'
+import { Box, Flex, IconButton } from '@repay/cactus-web'
 import { Link } from '@reach/router'
 import { useFeatureFlags } from '@repay/cactus-fwk'
 
@@ -8,7 +8,7 @@ const NavLink = ({ children, to, className }) => (
   <Link to={to} children={children} className={className} />
 )
 
-const Navigation = () => {
+const Navigation = ({ setLang }) => {
   const [allow_customer_login] = useFeatureFlags('allow_customer_login')
 
   return (
@@ -22,12 +22,19 @@ const Navigation = () => {
         />{' '}
         <span>Cactus Design System</span>
       </Flex>
+      <Flex ml="auto">
+        <IconButton label="United States" onClick={() => setLang('en-US')}>
+          🇺🇸
+        </IconButton>
+        <IconButton label="Canada" onClick={() => setLang('en-CA')}>
+          🇨🇦
+        </IconButton>
+      </Flex>
       <Flex
         as={NavLink}
         to="/icons"
         color="white"
         padding={4}
-        ml="auto"
         alignItems="center"
       >
         <span>Icons</span>

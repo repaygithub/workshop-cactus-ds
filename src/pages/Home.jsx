@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Text, TextButton, Box } from '@repay/cactus-web'
+import { I18nText } from '@repay/cactus-i18n'
 
 const Home = () => {
   const [broken, setBroken] = useState(false)
@@ -10,7 +11,7 @@ const Home = () => {
   return (
     <>
       <Text as="h1" textStyle="h4" fontWeight={400} textAlign="center">
-        Welcome to the Cactus Design System Workshop
+        <I18nText get="welcome-message" />
       </Text>
       <Box padding={5}>
         <TextButton variant="danger" onClick={() => setBroken(true)}>
