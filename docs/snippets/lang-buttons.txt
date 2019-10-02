@@ -1,0 +1,9 @@
+
+<Flex ml="auto">
+  <IconButton label="United States" onClick={() => setLang('en-US')}>
+    🇺🇸
+  </IconButton>
+  <IconButton label="Canada" onClick={() => setLang('en-CA')}>
+    🇨🇦
+  </IconButton>
+</Flex>
