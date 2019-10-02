@@ -4,16 +4,18 @@ import { Router } from '@reach/router'
 import App from './components/App'
 
 import Home from './pages/Home'
+import Icons from './pages/Icons'
 
 const appRoot = document.createElement('div')
 appRoot.className = 'app-root'
 document.body.appendChild(appRoot)
 
 ReactDom.render(
-  <App path="*">
-    <Router>
+  <Router>
+    <App path="*">
       <Home path="/" />
-    </Router>
-  </App>,
+      <Icons path="/icons" />
+    </App>
+  </Router>,
   appRoot
 )
