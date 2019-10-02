@@ -1,4 +1,4 @@
-# More Cactus Web
+# Cactus Grid and Icons
 
 First, we have made some quick organizational changes to the code and added a router. `App` has been moved to `src/components/App.jsx`, the content has been moved to `src/pages/Home.jsx`, and we've brought in and added a router from `@reach/router`.
 
