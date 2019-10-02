@@ -5,6 +5,8 @@ import App from './components/App'
 
 import Home from './pages/Home'
 import Icons from './pages/Icons'
+import NotFound from './pages/NotFound'
+import { UIConfigPage } from './pages/UIConfig'
 
 const appRoot = document.createElement('div')
 appRoot.className = 'app-root'
@@ -12,9 +14,11 @@ document.body.appendChild(appRoot)
 
 ReactDom.render(
   <Router>
-    <App path="*">
+    <App path="/">
       <Home path="/" />
-      <Icons path="/icons" />
+      <Icons path="icons" />
+      <UIConfigPage path="ui-config" />
+      <NotFound default />
     </App>
   </Router>,
   appRoot
