@@ -1,59 +1,50 @@
 import React from 'react'
-import { StyleProvider, Box, Flex } from '@repay/cactus-web'
-import { Link } from '@reach/router'
-import cactus from '../assets/cactus-with-fill.svg'
+import { Alert, StyleProvider, Box } from '@repay/cactus-web'
 import ScrollManager from './ScrollManager'
+import AppRoot from '@repay/cactus-fwk'
+import NotFound from '../pages/NotFound'
+import PropTypes from 'prop-types'
+import { useUIConfig } from '../stores/UIConfigStore'
+import Navigation from './Navigation'
 
-const NavLink = ({ children, to, className }) => (
-  <Link to={to} children={children} className={className} />
-)
+// Fix incorrect AppRoot.propTypes
+AppRoot.propTypes.globalErrorView = PropTypes.elementType
 
-export const App = ({ children }) => (
-  <StyleProvider global>
-    <ScrollManager />
-    <Flex as="nav" justifyContent="start" width="100vw" colors="base">
-      <Flex as={NavLink} to="/" alignItems="center" padding={4} color="white">
-        <Box
-          as="img"
-          src={cactus}
-          alt="cactus with a cowboy hat"
-          height="40px"
-        />{' '}
-        <span>Cactus Design System</span>
-      </Flex>
-      <Flex
-        as={NavLink}
-        to="/icons"
-        color="white"
-        padding={4}
-        ml="auto"
-        alignItems="center"
-      >
-        <span>Icons</span>
-      </Flex>
-      <Flex
-        as={NavLink}
-        to="/ui-config"
-        color="white"
-        padding={4}
-        alignItems="center"
-      >
-        <span>UI Config</span>
-      </Flex>
-      <Flex
-        as={NavLink}
-        to="/not-found"
-        color="white"
-        padding={4}
-        alignItems="center"
-      >
-        <span>404</span>
-      </Flex>
-    </Flex>
-    <Box mx="auto" maxWidth={['92vw', '90vw', '980px']}>
-      {children}
+const GlobalErrorView = ({ error, info }) => {
+  return (
+    <Box padding={7}>
+      <Alert status="error" mb={5}>
+        {error.message}
+      </Alert>
+      <NotFound />
+      <pre>{info.componentStack}</pre>
+      <pre>{error.stack}</pre>
     </Box>
-  </StyleProvider>
-)
+  )
+}
+
+export const App = ({ children }) => {
+  const {
+    uiConfig: { use_cactus_styles, allow_customer_login }
+  } = useUIConfig()
+
+  const featureFlags = {
+    use_cactus_styles,
+    allow_customer_login,
+    __dev__: process.env.NODE_ENV !== 'production'
+  }
+
+  return (
+    <StyleProvider global={use_cactus_styles}>
+      <AppRoot globalErrorView={GlobalErrorView} featureFlags={featureFlags}>
+        <ScrollManager />
+        <Navigation />
+        <Box mx="auto" maxWidth={['92vw', '90vw', '980px']}>
+          {children}
+        </Box>
+      </AppRoot>
+    </StyleProvider>
+  )
+}
 
 export default App
