@@ -63,7 +63,7 @@ Breakpoints are built into every style property provided by Styled System. If yo
 - These utility components can be converted to any tag by using the `as` property and providing a string or React component.
 - We can use the provided breakpoints of 768px, 1024px, 1200px, and 1440px to update styles based on viewport width.
 
-## Next: More Cactus Web
+## Clean-up
 
 To start the next step, let's stash our changes so we all start at the same place and checkout the next branch.
 
@@ -71,3 +71,5 @@ To start the next step, let's stash our changes so we all start at the same plac
 git stash save "added cactus web"
 git checkout step-1
 ```
+
+### Next: [Cactus Web Grid and Cactus Icons](./02-cactus-web-grid-and-cactus-icons.md)
