@@ -17,7 +17,7 @@ Steps to follow before the workshop starts.
 
 5. Accept the self-signed certificate and you should see "Hello World" printed.
 
-6. See [Snapshot 1](./docs/snapshot-1.md) for the next steps.
+6. See [Step 1 - Add Cactus Web](./docs/01-add-cactus-web.md)
 
 ## DIY Setup
 
