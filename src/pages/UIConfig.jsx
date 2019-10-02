@@ -10,36 +10,27 @@ import {
   ToggleField,
   CheckBoxField
 } from '@repay/cactus-web'
-
-function getDefaultValues() {
-  return {
-    app_name: 'Cactus Design System',
-    terms_1: '',
-    terms_2: '',
-    terms_3: '',
-    terms_4: '',
-    select_color: 'default',
-    use_cactus_styles: true,
-    allow_customer_login: false
-  }
-}
+import { useUIConfig } from '../stores/UIConfigStore'
 
 export const UIConfigPage = () => {
-  const [values, setValues] = useState(getDefaultValues)
+  const { uiConfig, setUIConfig } = useUIConfig()
+  const [values, setValues] = useState(uiConfig)
   const handleChange = useCallback(
     (name, value) => {
       setValues(state => ({ ...state, [name]: value }))
     },
     [setValues]
   )
+
+  const handleSubmit = event => {
+    event.preventDefault()
+    setUIConfig(values)
+  }
+
   return (
     <>
       <Text as="h1">UI Configuration</Text>
-      <Box
-        as="form"
-        marginBottom={6}
-        onSubmit={event => event.preventDefault()}
-      >
+      <Box as="form" marginBottom={6} onSubmit={handleSubmit}>
         <TextInputField
           name="app_name"
           label="App Name"
