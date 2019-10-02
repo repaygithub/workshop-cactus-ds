@@ -833,6 +833,19 @@
     "@babel/preset-typescript" "^7.3.3"
     babel-plugin-dynamic-import-node "^2.2.0"
 
+"@repay/cactus-fwk@^0.4.0":
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/@repay/cactus-fwk/-/cactus-fwk-0.4.0.tgz#6ad300656381217c6e1bcb72d2b3029076920145"
+  integrity sha512-pa1DzywkJKLxIcGEFGPizMPZ/aExcQ/W1kK0CZqB8DXrPx37Lx8mhETHrNB+z4gcXo7CBsGlGJ/Yqe/l9xdjmw==
+
+"@repay/cactus-i18n@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@repay/cactus-i18n/-/cactus-i18n-0.2.0.tgz#146756998dbe6ba947a784ac8bc78a1eae5bb9d5"
+  integrity sha512-mI8YEZ7YKeAm2bN4+b+GEgZ1anJjb5LB36H358g5nUTWBM1HMbIjbNDX1vos+3+Or/ubQLVJKJ9BecjcmkbTYA==
+  dependencies:
+    fluent "^0.12.0"
+    fluent-langneg "^0.1.1"
+
 "@repay/cactus-icons@^0.6.1":
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/@repay/cactus-icons/-/cactus-icons-0.6.1.tgz#a83699bb18952b4964662631b0e5b3db13c3ad54"
@@ -2717,6 +2730,16 @@ find-up@^3.0.0:
   integrity sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==
   dependencies:
     locate-path "^3.0.0"
+
+fluent-langneg@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/fluent-langneg/-/fluent-langneg-0.1.1.tgz#8a6a95e0c57a1c339aa598cb1ee7e3df0c976adb"
+  integrity sha512-7lCFviLfesnxV4SnwAJh1epnKw97doF1Fmrjx3rAjq1/bbgrmuC43rpL7Qx81keB4Eu+YsjFZ7hCMg2mM25SyA==
+
+fluent@^0.12.0:
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/fluent/-/fluent-0.12.0.tgz#c5a5fcf042817abb1f786a700aff9dc068b5fb0d"
+  integrity sha512-rE5FSBv/1LoJ91suQy+dJm8vGhfq2fnzURgbC6/cfJQG/xVZn0TBeh3NVoZD9mlpryLJ37NKCKnX2u5gB4s2BQ==
 
 flush-write-stream@^1.0.0:
   version "1.1.1"
