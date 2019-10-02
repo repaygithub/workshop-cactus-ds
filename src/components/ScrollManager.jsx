@@ -31,11 +31,9 @@ class ScrollManager extends Component {
     requestAnimationFrame(() => {
       if (!scrollPositions[key]) {
         // never seen this location before
-        console.log('scrolling to 0,0')
         window.scrollTo(0, 0)
       } else {
         // seen it
-        console.log('scrolling to 0,' + scrollPositions[key])
         window.scrollTo(0, scrollPositions[key])
       }
     })
