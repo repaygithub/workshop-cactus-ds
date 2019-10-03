@@ -7,7 +7,7 @@ A workshop to learn the [Cactus Design System](https://repaygithub.github.io/cac
 Steps to follow before the workshop starts.
 
 1. clone this repository  
-   `git clone ssh://github.com/repaygithub/cactus-ds-workshop`
+   `git clone ssh://github.com/repaygithub/workshop-cactus-ds`
 
 2. navigate into the directory
 
